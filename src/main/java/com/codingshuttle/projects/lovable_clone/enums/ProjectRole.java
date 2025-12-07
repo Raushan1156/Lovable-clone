@@ -1,5 +1,5 @@
 package com.codingshuttle.projects.lovable_clone.enums;
 
 public enum ProjectRole {
-    Editor, Member
+    Editor, Member, Owner
 }
