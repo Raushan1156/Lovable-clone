@@ -1,143 +1,84 @@
-# Lovable Clone – Backend (Ongoing)
+# Lovable-clone – Backend (Planned)
 
-A **Lovable-like backend system** built using **Spring Boot**, focused on clean architecture, scalability, and real-world backend design.
+## 📌 Project Overview
+Lovable-clone is a backend system in early development modeled on modern SaaS features. The aim is to build a robust backend with Spring Boot supporting:
 
-This is a **long-term project** under active development to deeply understand backend systems.
+- Authentication & authorization
+- Project management APIs
+- File handling and preview
+- AI integration workflows
+- Usage tracking and subscription billing
 
----
-
-## 🛠 Tech Stack
-
-- Java, Spring Boot
-- Spring Security (JWT)
-- Spring Data JPA, Hibernate
-- MySQL / H2 (dev)
-- Stripe API (Billing)
-- SSE (Server-Sent Events)
-- Redis (planned – rate limiting & caching)
-- Zipkin (planned – tracing)
+This repository is currently in the **design and initial implementation phase**. Core backend features will be incrementally added.
 
 ---
 
-## 🔐 Authentication APIs
+## 📌 Current Status
+- Project skeleton created
+- DTOs and entity structures designed
+- Initial Maven/Spring Boot configuration
 
-| Method | Endpoint |
-|------|---------|
-| POST | `/api/auth/login` |
-| POST | `/api/auth/signup` |
-| GET | `/api/auth/me` |
+**No complete APIs or business logic implemented yet**
 
 ---
 
-## 📁 Projects APIs
+## 🔧 Planned Backend Features
 
-| Method | Endpoint |
-|------|---------|
-| POST | `/api/projects` |
-| GET | `/api/projects/{id}` |
-| PUT | `/api/projects/{id}` |
-| DELETE | `/api/projects/{id}` |
-| GET | `/api/projects` |
-
-- One project can have multiple users
+### Authentication
+- JWT-based signup/login
 - Role-based access control
 
----
+### Project APIs
+- Create, read, update, delete projects
+- Endpoint security
+- Validation and error handling
 
-## 🗂 Files APIs
+### Files & Preview
+- Endpoint to list/download files
+- Zip export utility
 
-| Method | Endpoint |
-|------|---------|
-| GET | `/api/projects/{id}/files` |
-| GET | `/api/projects/{id}/files/**` |
-| GET | `/api/projects/{id}/download-zip` |
+### Usage & Analytics
+- Track usage limits per user
+- Usage summary APIs
 
-- File tree + metadata
-- Single file download
-- Download all files as ZIP
-
----
-
-## 👥 Sharing & Permissions
-
-| Method | Endpoint |
-|------|---------|
-| GET | `/api/projects/{id}/members` |
-| POST | `/api/projects/{id}/members` |
-| PATCH | `/api/projects/{id}/members/{userId}` |
-| DELETE | `/api/projects/{id}/members/{userId}` |
+### Billing
+- Stripe integration for plans
+- Subscription management
 
 ---
 
-## 💬 Chat & AI Generation
-
-| Method | Endpoint |
-|------|---------|
-| GET | `/api/projects/{id}/chat-sessions` |
-| POST | `/api/projects/{id}/chat-sessions` |
-| GET | `/api/chat/sessions/{sessionId}/messages` |
-| POST (SSE) | `/api/chat/stream` |
-
----
-
-## ▶️ Preview & Runner
-
-| Method | Endpoint |
-|------|---------|
-| POST | `/api/projects/{id}/preview` |
-| GET | `/api/previews/{previewId}/status` |
-| GET (SSE) | `/api/previews/{previewId}/logs` |
-| DELETE | `/api/previews/{previewId}` |
-
-Preview lifecycle:
+## 📌 Tech Stack
+- Java
+- Spring Boot
+- Spring Security (JWT)
+- Spring Data JPA / Hibernate
+- MySQL / H2
+- Maven
+- Stripe API (planned)
+- SSE for streaming APIs
 
 ---
 
-## 💳 Subscription & Billing (Stripe)
-
-| Method | Endpoint |
-|------|---------|
-| GET | `/api/plans` |
-| GET | `/api/me/subscription` |
-| POST | `/api/stripe/checkout` |
-| POST | `/api/stripe/portal` |
-
-Plans: **FREE**, **PRO**
-
----
-
-## 📊 Usage & Quotas
-
-| Method | Endpoint |
-|------|---------|
-| GET | `/api/usage/today` |
-| GET | `/api/usage/limits` |
-
-Tracked quotas:
-- Tokens used
-- Projects created
-- Previews running
-
----
-
-## 🚧 Project Status
-
-- Core backend architecture in progress
-- Features implemented incrementally
-- Focus on correctness, scalability, and clean design
-
----
-
-## 🎯 Key Concepts Implemented
-
-- Layered Architecture (Controller / Service / Repository)
-- DTO–Entity separation
+## 🧠 Architectural Concepts
+- Layered design (Controller → Service → Repo)
+- DTO-Entity separation
 - Global exception handling
-- Service-layer business validation
-- Role-based authorization
-- External API integration (Stripe)
-- Streaming APIs using SSE
+- Token-based auth filter
+- Caching & quotas (planned)
+- Tracing (planned)
 
 ---
 
-> This project is built for **learning depth and backend expertise**, not as a rushed demo.
+## 📌 Future Roadmap
+1. Implement Authentication
+2. Build Project CRUD APIs
+3. File handling and preview
+4. Billing and plans
+5. Analytics and usage quotas
+6. Caching & performance uplift
+
+---
+
+## ⚠️ Important Note
+This project is a **work in progress** for backend learning and is not yet production-ready or feature complete.
+
